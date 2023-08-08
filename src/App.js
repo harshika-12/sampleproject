@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { Box, Card } from "@mui/material";
+import React, { useState } from "react";
+import HomeComponent from "./component/Home.component";
+const App = () => {
+  const [showButton, setShowButton] = useState(true);
+  const [count, setCount] = useState(1);
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+    if (count === 1) {
+      setShowButton(true);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card
+      sx={{
+        height: "90vh",
+        width: "200vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <HomeComponent
+        showButton={showButton}
+        setShowButton={setShowButton}
+        count={count}
+        setCount={setCount}
+        handleDecrement={handleDecrement}
+      />
+    </Card>
   );
-}
+};
 
 export default App;
