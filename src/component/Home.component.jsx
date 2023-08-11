@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardMedia, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 
 const HomeComponent = ({
@@ -10,9 +10,6 @@ const HomeComponent = ({
 }) => {
   return (
     <div>
-      {/* <Card>
-        <CardMedia component="img" image={realme} alt="logo" />
-      </Card> */}
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Box
           sx={{
